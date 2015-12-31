@@ -1,0 +1,10 @@
+# redRover crontab
+# Note that all times are set for UTC.
+# Activity takes place from 11:58 - 12:00 EST
+
+# Bring up Wi-Fi in preparation for download.
+58 16 * * * /bin/sh /mnt/onboard/redRover/wifi/up.sh >/dev/null 2>&1
+# Download and show the latest rover image, then disable wi-fi.
+0 17 * * * /bin/sh /mnt/onboard/redRover/mars.sh ; /bin/sh /mnt/onboard/redRover/wifi/down.sh >/dev/null 2>&1 
+# Suspend the system until we need cron to run again.         
+/mnt/onboard/redRover/wake/suspend_until.sh 16:57 

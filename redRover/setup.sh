@@ -11,10 +11,8 @@ cat >/var/spool/cron/crontabs/root <<EOL
 
 # Bring up Wi-Fi in preparation for download.
 58 16 * * * /bin/sh /mnt/onboard/redRover/wifi/up.sh >/dev/null 2>&1
-# Download and show the latest rover image, then disable wi-fi.
-0 17 * * * /bin/sh /mnt/onboard/redRover/mars.sh ; /bin/sh /mnt/onboard/redRover/wifi/down.sh >/dev/null 2>&1 
-# Suspend the system until we need cron to run again.         
-/mnt/onboard/redRover/wake/suspend_until.sh 16:57
+# Download and show the latest rover image, then disable wi-fi and suspend the system until we need cron to run again. 
+0 17 * * * /bin/sh /mnt/onboard/redRover/mars.sh ; /bin/sh /mnt/onboard/redRover/wifi/down.sh ; /mnt/onboard/redRover/wake/suspend_until.sh 16:57 >/dev/null 2>&1 
 EOL
 
 echo "Configuring /etc/init.d/rcS2..."

@@ -45,7 +45,6 @@ Those wishing to self-host might also want to review [NASA's Mars Rover Photos A
 
 ## Caveats and Potential Improvements
 
-  - Power management is somewhat iffy, there is a patched version of rtcwake included with redRover but suspension seems to save less battery than expected.
   - There are 3 versions of busybox on the system in total: the system's version, the vanilla version compiled for ARMv6, and the version with the rtcwake patch.
   - Fetching and cropping the image could be handled on the device if the appropriate libraries (esp. PIL) could be cross-compiled for the platform. 
   - The entire system could be bundled into a KoboRoot.tgz file. I may do this at some point. 

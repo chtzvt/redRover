@@ -8,6 +8,11 @@
 # Start crond with the correct working directory and logfile.   
 /mnt/onboard/redRover/busybox crond -b -L /mnt/onboard/redRover/cron/cronlog -c /var/spool/cron/crontabs/
  
+# Immediately display a rover image once boot is completed.
+cat /mnt/onboard/redRover/rocks.raw | /usr/local/Kobo/pickel showpic
+# Stop Nickel, thus preserving the image we are displaying.
+killall nickel
+ 
 sleep 30  
 
 # Call mars.sh, killing nickel/hindenburg and displaying the latest rover image at boot time. 

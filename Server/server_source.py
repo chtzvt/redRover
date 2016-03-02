@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json, urllib2, os
 # To satisfy this dependency, install the python-pil package with your system's package manager
 # Alternatively, you can pip install Pillow.

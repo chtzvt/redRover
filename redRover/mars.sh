@@ -10,3 +10,5 @@ cat /mnt/onboard/redRover/rocks.raw | /usr/local/Kobo/pickel showpic
 killall nickel
 # No idea what this is, either.
 killall hindenburg
+# Same here, appears to set the wifi status icon (which we don't need anyways)
+killall fickel

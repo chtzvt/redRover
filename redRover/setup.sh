@@ -19,9 +19,10 @@ echo "Configuring /etc/init.d/rcS2..."
 # Delete last line from /etc/init.d/rcS2 (the call to getIP)
 sed -i '$ d' /etc/init.d/rcS2
 # Installs call to bootstrap.sh, which prepares the system to boot. 
-cat >/etc/init.d/rcS2 <<EOL
+cat >>/etc/init.d/rcS2 <<EOL
 # redRover bootstrap - starts crond, displays latest image (after 30s), and disables wi-fi (after 2 minutes)
 /bin/sh /mnt/onboard/redRover/bootstrap.sh  
 EOL
+chmod a+x /etc/init.d/rcS2
 
 echo "All done! Reboot your Kobo for changes to take effect."

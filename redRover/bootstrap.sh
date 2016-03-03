@@ -10,8 +10,6 @@
  
 # Immediately display a rover image once boot is completed.
 cat /mnt/onboard/redRover/rocks.raw | /usr/local/Kobo/pickel showpic
-# Stop Nickel, thus preserving the image we are displaying.
-killall nickel
  
 sleep 30  
 

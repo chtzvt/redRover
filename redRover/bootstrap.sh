@@ -16,9 +16,8 @@ sleep 30
 # Call mars.sh, killing nickel/hindenburg and displaying the latest rover image at boot time. 
 /bin/sh /mnt/onboard/redRover/mars.sh  
 
-# Sync system + hardware clock, set both to current time UTC
-ntpd -d -q -p pool.ntp.org
-hwclock -w -u
+# Synchronize the system clock
+/bin/sh /mnt/onboard/redRover/time_sync.sh
 
 # 2 minute grace period after boot for maintenance purposes.
 sleep 120
